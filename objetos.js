@@ -62,10 +62,47 @@ let person = {
         {nombre:"Camino", genero: ["enfermedad", "tristeza"], año:2017, sinopsis:"Una chica que se enferma"}
     ]
 
-        function listar(){
+        function listar(){ //en vez del for podria haber usado en forEach
             let i;
             for(i=0; i<=peliculas.length; i++)
             {
                 console.log("Nombre: "+peliculas[i].nombre+"Genero: "+peliculas[i].genero+ "Año: "+peliculas[i].año+ "Sinopsis: "+peliculas[i].sinopsis)
             }
         }
+
+
+        //CREAR UN ARRAY LLAMADO MEDES Y QUE ALMACENE LOS DOCE MESES DEL AÑO. MOSTRAR EN PANTALLA LOS NOMBRES
+
+        let meses = [
+            "enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"
+        ];
+
+        function mostrarMes(){
+            console.log(meses.forEach(mes => console.log(" \n"+mes)))
+        }
+
+
+        //CREA UN SCRIPT QUE SOLICITE AL USUARIO MEDIANTE UN PROMPT EL NOMBRE DE CIUDADES Y ALMACENARLAS EN UN ARREGLO, CUANDO EL USUARIO SELECCIONA CANCELAR SE DEBE MOSTRAR EL ARREGLO GENERADO. MOSTRAR LA LONG DEL ARREGLO Y LOS ITEMS EN LA PRIMER,TERCER Y ULTIMA POSICION
+
+        let ciudades;
+        let arregloCiudades = [];
+
+           while(true){
+            ciudades = prompt("Ingrese las ciudades elegidas");
+            if(ciudades == null){
+         
+                break;
+            }
+            arregloCiudades.push(ciudades);
+
+           }
+
+           console.log(arregloCiudades);
+           console.log("La longitud del arreglo es: "+arregloCiudades.length);
+           
+                
+              
+            
+    
+        
+        
