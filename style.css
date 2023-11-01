@@ -1,0 +1,22 @@
+.divPequeño{
+    height: 150px;
+    width: 150px;
+    background-color: aquamarine;
+}
+
+.divCambiado{
+    height: 150px;
+    width: 150px;
+    background-color: black;
+}
+
+.cuadrado{
+    height: 150px;
+    width: 150px;
+    background-color:blueviolet;
+    
+}
+.nuevo-elemento{
+    display: flex;
+    flex-wrap: wrap;
+}
