@@ -12,6 +12,14 @@
 
 <body>
 
+    <form action="" class="bg bg-light p-5 m-2">
+        <h2>Escribe un Tweet</h2>
+        <textarea name="" id="tweet" rows="5" class="form-control mb-2" ></textarea>
+        <button class="btn btn-primary d-block ms-auto" onclick="enviarTweet(event)">Enviar Tweet</button>
+    </form>
+
+    <div class="contenedor-tweet"></div>
+
     <div class="nuevo-elemento">
 
     </div>
@@ -35,7 +43,7 @@
     
 
     <button onclick="saludo">saludo</button>
-    <script src="/dom&bom.js"></script>
+    <script src="/twitter.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
         crossorigin="anonymous"></script>
