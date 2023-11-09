@@ -1,9 +1,9 @@
 class Product{
-    constructor(nombre, precio, descripcion, id, imagen){
+    constructor(nombre, precio, descripcion, productId, imagen){
         this.nombre = nombre;
         this.precio = precio;
         this.descripcion = descripcion
-        this.id = id;
+        this.productId = productId;
         this.imagen = imagen;
 
     }
@@ -29,7 +29,7 @@ class Product{
           <p class="card-text">${prod.descripcion}</p>
           <span href="#" class="text-danger"><strong>$ ${prod.precio}</strong></span>
           <br>
-          <button class="btn btn-primary my-4" onclick="agregarProducto(${product.id})">Agregar al carrito</button>
+          <button class="btn btn-primary my-4" onclick="agregarProducto(${prod.productId})">Agregar al carrito</button>
           <button class="btn btn-danger">Fav</button>
         </div>
         `
@@ -38,9 +38,30 @@ class Product{
     })
 
 
-    let carrito = [];
-    function agregarProducto(id){
-        let product = product.find(prod => prod.id == id)
-        carrito.push(product)
-        console.log(product)
+    let carrito = []
+
+    function agregarProducto(productId){
+        let prod = product.find(prod => prod.productId == productId)
+        carrito.push(prod)
+console.log(prod)
+        //creo el elemento en el modal
+
+        const newProductCards = document.createElement('div')
+        newProductCards.id = prod.productId
+        //agrego info
+        newProductCards.classList.add('card', 'mx-2')
+        newProductCards.style.width = '18rem';
+        newProductCards.innerHTML = `
+        <img src="${prod.imagen}" class = "card card-img-top" alt=${prod.descripcion}>
+        <div class="card-body">
+          <h5 class="card-title">${prod.nombre}</h5>
+          <p class="card-text">${prod.descripcion}</p>
+          <span href="#" class="text-danger"><strong>$ ${prod.precio}</strong></span>
+          <br>
+          <button class="btn btn-danger"> Eliminar</button>
+        </div>
+        `
+        //busco al padre
+        const padreContenedor = document.querySelector('.modal-body')
+        padreContenedor.appendChild(newProductCards)
     }
